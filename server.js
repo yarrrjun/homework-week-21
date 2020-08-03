@@ -28,7 +28,7 @@ app.listen(PORT, function() {
 
 // Connect to the Mongo DB
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://yarrrjun:d@rks3ct0r@ds135704.mlab.com:35704/heroku_rfgjj7zk",
+  process.env.MONGODB_URI || "mongodb://localhost/books",
     {
       useCreateIndex: true,
       useNewUrlParser: true,
