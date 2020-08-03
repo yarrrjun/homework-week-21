@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import Jumbotron from "../components/Jumbotron";
+import Jumbotron from "../components/Jumbotron";
 import Card from "../components/Card";
 import Book from "../components/Book";
 import Footer from "../components/Footer";
@@ -35,12 +35,12 @@ class Saved extends Component {
       <Container>
         <Row>
           <Col size="md-12">
-            {/* <Jumbotron> */}
+            <Jumbotron>
               <h1 className="text-center">
                 <strong>(React) Google Books Search</strong>
               </h1>
               <h2 className="text-center">Search for and Save Books of Interest.</h2>
-            {/* </Jumbotron> */}
+            </Jumbotron>
           </Col>
         </Row>
         <Row>
@@ -59,7 +59,6 @@ class Saved extends Component {
                       image={book.image}
                       Button={() => (
                         <button
-                          style={{backgroundColor: "#2196f3",color:"white"}}
                           onClick={() => this.handleBookDelete(book._id)}
                           className="btn btn-danger ml-2"
                         >
@@ -70,7 +69,7 @@ class Saved extends Component {
                   ))}
                 </List>
               ) : (
-                <h2 className="text-center">No Saved Books</h2>
+                <h2 className="text-center">Bookshelf is empty!</h2>
               )}
             </Card>
           </Col>

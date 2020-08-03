@@ -12,7 +12,7 @@ class Home extends Component {
   state = {
     books: [],
     q: "",
-    message: "Search For A Book To Begin!"
+    message: "What book would you like to find?"
   };
 
   handleInputChange = event => {
@@ -24,15 +24,16 @@ class Home extends Component {
 
   getBooks = () => {
     API.getBooks(this.state.q)
-      .then(res =>
+      .then(res => {
+        console.log(res.data)
         this.setState({
           books: res.data
         })
-      )
+      })
       .catch(() =>
         this.setState({
           books: [],
-          message: "No New Books Found, Try a Different Query"
+          message: "No books found, try again!"
         })
       );
   };
@@ -61,12 +62,12 @@ class Home extends Component {
       <Container>
         <Row>
           <Col size="md-12">
-            {/* <Jumbotron> */}
+            <Jumbotron>
               <h1 className="text-center">
                 <strong>(React) Google Books Search</strong>
               </h1>
               <h2 className="text-center">Search for and Save Books of Interest.</h2>
-            {/* </Jumbotron> */}
+            </Jumbotron>
           </Col>
           <Col size="md-12">
             <Card title="Book Search" icon="far fa-book">

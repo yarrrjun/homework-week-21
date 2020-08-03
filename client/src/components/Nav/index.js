@@ -32,8 +32,8 @@ class Nav extends Component {
 
   render() {
     return (
-      <nav className="navbar navbar-expand-lg navbar-light mb-2">
-        <Link className="navbar-brand" to="/" style={{color:"white"}}>
+      <nav className="navbar navbar-expand-lg navbar-light bg-light mb-2">
+        <Link className="navbar-brand" to="/">
           Google Books
         </Link>
         <button
@@ -51,7 +51,6 @@ class Nav extends Component {
           <ul className="navbar-nav">
             <li className="nav-item">
               <Link
-                style={{color:"white"}}
                 onClick={this.toggleNav}
                 className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}
                 to="/"
@@ -61,7 +60,6 @@ class Nav extends Component {
             </li>
             <li className="nav-item">
               <Link
-                style={{color:"white"}}
                 onClick={this.toggleNav}
                 className={window.location.pathname === "/saved" ? "nav-link active" : "nav-link"}
                 to="/saved"
